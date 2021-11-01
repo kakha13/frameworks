@@ -1,6 +1,8 @@
 ---
 title: Vue.js
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+description: 'Vue.js - The Progressive JavaScript Framework.'
+category: 'Framework'
+image: https://vuejs.org/images/logo.svg
 ---
 
 ## Vue.js

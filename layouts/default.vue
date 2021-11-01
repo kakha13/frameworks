@@ -6,3 +6,13 @@
     <TheFooter />
   </div>
 </template>
+
+<style>
+.text-indigo {
+  color:var(--bs-indigo)
+}
+
+li:hover a {
+  color:var(--bs-blue) !important
+}
+</style>
