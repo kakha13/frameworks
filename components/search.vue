@@ -6,7 +6,7 @@
       type="search"
       autocomplete="off"
       placeholder="Search frameworks"
-    ></input>
+    />
 
     <ul v-if="frameworks.length" class="list-group position-absolute w-100">
       <li class="list-group-item d-flex border-bottom-0 pt0 pb-0 justify-content-between align-items-start">
@@ -16,14 +16,14 @@
       </li>
       <li v-for="item of frameworks" :key="item.slug" class="list-group-item">
         <NuxtLink
-          :to="{ name: 'frameworks-slug', params: { slug: item.slug } }"
+          :to="item.path"
           class="fw-bold text-decoration-none"
           @click.native="handleClick"
         >
           {{ item.title }}
         </NuxtLink>
 
-        <small> - {{ item.category }}</small>
+        <small> - {{ item.category }} ({{ item.language }})</small>
         <p class="fst-italic lh-sm">
           <small>{{ item.description }}</small>
         </p>
@@ -46,10 +46,11 @@ export default {
         this.frameworks = []
         return
       }
-      this.frameworks = await this.$content('frameworks')
+      this.frameworks =  await this.$content('frameworks',{ deep: true })
         .limit(6)
         .search(searchQuery)
         .fetch()
+
     }
   },
   methods: {

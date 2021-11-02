@@ -13,3 +13,19 @@
         </div>
   </main>
 </template>
+
+<script>
+export default {
+head () {
+    return {
+      title: 'Main Page'
+      
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
+

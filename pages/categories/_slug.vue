@@ -1,20 +1,13 @@
 <template>
   <main class="container">
     <div class="py-5 border-bottom">
-      <h1 class="text-indigo">Frameworks</h1>
+      <h1 class="text-indigo">{{title}}</h1>
       <p class="fs-5 col-md-8">
-        Quickly and easily get started with Bootstrap's compiled,
-        production-ready files with this barebones example featuring some basic
-        HTML and helpful links. Download all our examples to get started.
       </p>
     </div>
 
     <div class="bd-content order-1 py-5">
       <div class="row">
-     
-          <NuxtLink to="frameworks/javascript" class="col">Javascript</NuxtLink>
-          <NuxtLink to="frameworks/css" class="col">CSS</NuxtLink>
-    
         <article v-for="item in frameworks" :key="item.slug" class="col-sm-12 col-md-3 mb-5">
           <h4>{{ item.title }}</h4>
           <p>{{ item.description }}</p>
@@ -32,18 +25,13 @@
 export default {
   async asyncData ({ $content, params }) {
     const frameworks = await $content('frameworks',{ deep: true }, params.slug)
-      .only(['title', 'description','image', 'slug'])
+      .only(['title', 'description', 'slug'])
       .fetch()
 
     return {
-      frameworks
+      frameworks,title:`${params.slug.toUpperCase()} Frameworks`
     }
-  },
-  head () {
-    return {
-      title: 'Frameworks/'
-      
-    }
+   
   }
 }
 </script>

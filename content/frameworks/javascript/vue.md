@@ -2,7 +2,9 @@
 title: Vue.js
 description: 'Vue.js - The Progressive JavaScript Framework.'
 category: 'Framework'
-image: https://vuejs.org/images/logo.svg
+language: 'Javascript'
+image: vue.svg
+link: https://vuejs.org/
 ---
 
 ## Vue.js

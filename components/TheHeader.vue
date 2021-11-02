@@ -53,8 +53,8 @@
             <li>
               <a href="/categories" class="nav-link text-light">
                 <span
-                  class="d-block mx-auto mb-1 text-center material-icons-round"
-                >list</span>
+                  class="d-block mx-auto mb-1 text-center material-icons"
+                >format_list_bulleted</span>
                 Categories
               </a>
             </li>

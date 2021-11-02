@@ -1,7 +1,10 @@
-export default {
+import { defineNuxtConfig } from "@nuxt/bridge";
+
+export default defineNuxtConfig({
+   bridge: false,
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "frameworks",
+    title: "Frameworks Catalog",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -28,13 +31,13 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    "@nuxtjs/eslint-module",
+    // "@nuxtjs/eslint-module",
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    "@nuxtjs/axios",
+    // "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
@@ -55,4 +58,4 @@ export default {
   content: { fullTextSearchFields: ["title", "description"] },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
-};
+});

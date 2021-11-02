@@ -15,4 +15,10 @@
 li:hover a {
   color:var(--bs-blue) !important
 }
+
+.img-thumbnail {
+    height: 80px !important;
+    min-width: 80px !important;
+    padding: 10px;
+}
 </style>
