@@ -51,14 +51,6 @@
               </a>
             </li>
             <li>
-              <a href="/categories" class="nav-link text-light">
-                <span
-                  class="d-block mx-auto mb-1 text-center material-icons"
-                >format_list_bulleted</span>
-                Categories
-              </a>
-            </li>
-            <li>
               <a href="/about" class="nav-link text-light">
                 <span
                   class="d-block mx-auto mb-1 text-center material-icons-round"
@@ -72,8 +64,8 @@
     </div>
     <div class="px-3 py-2 border-bottom mb-3">
       <div class="container d-flex flex-wrap justify-content-center">
-        <div class="col-12 col-lg-8 mb-2 mb-lg-0 me-lg-auto">
-          <Search />
+        <div class="col-12 col-lg-3 mb-lg-0 me-lg-auto">
+          <Search/>
         </div>
       </div>
     </div>

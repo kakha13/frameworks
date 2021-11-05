@@ -19,10 +19,7 @@ export default defineNuxtConfig({
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {
-      src: "~/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-      mode: "client",
-    },
+    { src: '~/plugins/star-rating.js', mode: 'client'}
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -37,7 +34,7 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    // "@nuxtjs/axios",
+    "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
@@ -53,9 +50,12 @@ export default defineNuxtConfig({
       lang: "en",
     },
   },
+  
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: { fullTextSearchFields: ["title", "description"] },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    transpile:['vue-star-rating']
+  },
 });

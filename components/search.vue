@@ -1,71 +1,85 @@
 <template>
   <div class="position-relative">
-    <input
-      v-model="searchQuery"
-      class="form-control"
-      type="search"
-      autocomplete="off"
-      placeholder="Search frameworks"
-    />
+    <div class="input-group">
+      <span type="text" class="form-control text-muted" @click="showModal()" >Search frameworks</span>
+      <button class="btn btn-primary material-icons">
+        search
+      </button>
+    </div>
 
-    <ul v-if="frameworks.length" class="list-group position-absolute w-100">
-      <li class="list-group-item d-flex border-bottom-0 pt0 pb-0 justify-content-between align-items-start">
-        <div class="text-indigo">
-          Frameworks
-        </div>
-      </li>
-      <li v-for="item of frameworks" :key="item.slug" class="list-group-item">
-        <NuxtLink
-          :to="item.path"
-          class="fw-bold text-decoration-none"
-          @click.native="handleClick"
-        >
-          {{ item.title }}
-        </NuxtLink>
+    <Modal v-show="isModalVisible" @close="closeModal">
+      <template v-slot:header>
+        <input
+          v-model="searchQuery"
+          
+          class="form-control form-control-lg -outline-light"
+          type="search"
+          ref="search"
+          autocomplete="off"
+          placeholder="Search frameworks"
+          autofocus
+        />
+      </template>
 
-        <small> - {{ item.category }} ({{ item.language }})</small>
-        <p class="fst-italic lh-sm">
-          <small>{{ item.description }}</small>
-        </p>
-      </li>
-    </ul>
+      <template v-slot:body>
+        <div class="text-primary fw-normal pb-2" v-if="frameworks.length">Frameworks</div>
+        <ul v-if="frameworks.length" class="list-group">
+          <li
+            v-for="item of frameworks"
+            :key="item.slug"
+            class="list-group-item card mb-2"
+          >
+            <NuxtLink
+              :to="item.path"
+              class="fw-bold text-decoration-none"
+              @click.native="handleClick"
+            >
+              {{ item.title }}
+            </NuxtLink>
+            <p class="fst-italic lh-sm m-0">
+              <small>{{ item.category }} ({{ item.language }})</small>
+            </p>
+          </li>
+        </ul>
+      </template>
+
+      <template v-slot:footer></template>
+    </Modal>
   </div>
 </template>
-
 <script>
 export default {
-  data () {
+  data() {
     return {
-      searchQuery: '',
-      frameworks: []
-    }
+      searchQuery: "",
+      frameworks: [],
+      isModalVisible: false,
+    };
   },
   watch: {
-    async searchQuery (searchQuery) {
+    async searchQuery(searchQuery) {
       if (!searchQuery) {
-        this.frameworks = []
-        return
+        this.frameworks = [];
+        return;
       }
-      this.frameworks =  await this.$content('frameworks',{ deep: true })
+      this.frameworks = await this.$content("frameworks", { deep: true })
         .limit(6)
         .search(searchQuery)
-        .fetch()
-
-    }
+        .fetch();
+    },
   },
   methods: {
-    handleClick (e) {
-      this.searchQuery = ''
-    }
-  }
-}
+    handleClick(e) {
+      this.searchQuery = "";
+      this.isModalVisible = false
+    },
+    showModal() {
+      this.isModalVisible = true;
+      console.log("show", this.isModalVisible);
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
+  },
+};
 </script>
-
-<style scoped>
-ul {
-  z-index: 10;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  margin-top: -3px;
-}
-</style>

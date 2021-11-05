@@ -1,27 +1,61 @@
 <template>
-    <main class="container">
-        <div class="py-5 border-bottom">
+    <main >
+        <div class="container py-5">
             <h1 class="text-indigo">
                 Frameworks Catalog
             </h1>
-            <p class="fs-5 col-md-8">
-            Welcome
-            </p>
             <p>
                 You can look for your type frameworks in any programming languages and get latest information about best frameworks
             </p>
         </div>
+        <div class="bg-white py-4 shadow-sm">
+        <div class="container">
+            <div class="row align-items-center g-0">
+                <!-- Features -->
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="icon-sahpe icon-lg bg-light-warning rounded-circle text-center text-dark-warning fs-4 "> <i class="fe fe-video"> </i></span>
+                        <div class="ms-3">
+                            <h4 class="mb-0 fw-semi-bold">30 Languages</h4>
+                            <p class="mb-0">Enjoy a variety of fresh topics</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
+                    <div class="d-flex align-items-center">
+                        <span class="icon-sahpe icon-lg bg-light-warning rounded-circle text-center text-dark-warning fs-4 "> <i class="fe fe-users"> </i></span>
+                        <div class="ms-3">
+                            <h4 class="mb-0 fw-semi-bold">4000 Frameworks</h4>
+                            <p class="mb-0">Find the right instructor for you</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Features -->
+                <div class="col-xl-4 col-lg-4 col-md-12">
+                    <div class="d-flex align-items-center">
+                        <span class="icon-sahpe icon-lg bg-light-warning rounded-circle text-center text-dark-warning fs-4 "> <i class="fe fe-clock"> </i></span>
+                        <div class="ms-3">
+                            <h4 class="mb-0 fw-semi-bold">Reviews</h4>
+                            <p class="mb-0">Learn on your schedule</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </main>
 </template>
 
 <script>
+// import { Modal } from 'bootstrap'
 export default {
-head () {
-    return {
-      title: 'Main Page'
-      
+    head () {
+        return {
+        title: 'Main Page'
+        
+        }
     }
-  }
 }
 </script>
 
