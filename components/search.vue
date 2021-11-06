@@ -1,23 +1,16 @@
 <template>
-  <div class="position-relative">
-    <div class="input-group">
-      <span type="text" class="form-control text-muted" @click="showModal()" >Search frameworks</span>
-      <button class="btn btn-primary material-icons">
-        search
-      </button>
-    </div>
+   <div >
+    <span type="text" class="form-control border-0 bg-secondary text-light" @click="showModal()" >Search frameworks</span>
 
     <Modal v-show="isModalVisible" @close="closeModal">
       <template v-slot:header>
         <input
           v-model="searchQuery"
-          
           class="form-control form-control-lg -outline-light"
           type="search"
           ref="search"
           autocomplete="off"
           placeholder="Search frameworks"
-          autofocus
         />
       </template>
 
@@ -75,7 +68,9 @@ export default {
     },
     showModal() {
       this.isModalVisible = true;
-      console.log("show", this.isModalVisible);
+      this.$nextTick(function () {
+          this.$refs.search.focus()
+      })
     },
     closeModal() {
       this.isModalVisible = false;
