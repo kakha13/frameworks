@@ -7,35 +7,46 @@
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-          
           <div class="dropdown">
-            <a href="#" @click="dropdownShow=!dropdownShow" class="d-flex align-items-center col-lg-4 mb-lg-0 link-dark text-decoration-none" >
-             <h4 class="me-2 text-white fw-bold">FC</h4>
-             <span class="after me-2 d-lg-none"></span>
+            <a href="#"
+              @click="dropdownShow = !dropdownShow"
+              class="d-flex align-items-center col-lg-4 mb-lg-0 link-dark text-decoration-none"
+            >
+              <h4 class="me-2 text-white fw-bold">FC</h4>
+              <span class="after me-2 d-lg-none"></span>
             </a>
-            <ul :class="`dropdown-menu text-small shadow ${dropdownShow ? 'show' : ''}`" aria-labelledby="dropdownNavLink" style="">
-              <li><a class="dropdown-item" href="/frameworks">Frameworks</a></li>
-              <li><a class="dropdown-item" href="/about">About</a></li>
+            <ul
+              :class="`dropdown-menu text-small shadow ${dropdownShow ? 'show' : ''}`"
+              aria-labelledby="dropdownNavLink"
+              style
+            >
+              <li >
+                <nuxt-link to="/" class="dropdown-item">Home</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/frameworks" class="dropdown-item">Frameworks</nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/about" class="dropdown-item">About</nuxt-link>
+              </li>
             </ul>
           </div>
 
-          
           <form class="col-10 col-lg-3 me-lg-auto mb-lg-0 me-lg-4">
-              <Search/>
+            <Search />
           </form>
 
-          <ul class="nav col-md-12 col-lg-auto  mb-2 mb-md-0 d-none d-lg-flex">
+          <ul class="nav col-md-12 col-lg-auto mb-2 mb-md-0 d-none d-lg-flex">
             <li>
-              <a href="/" class="nav-link px-2 text-light">Home</a>
+              <nuxt-link to="/" class="nav-link px-2 text-light">Home</nuxt-link>
             </li>
             <li>
-              <a href="/frameworks" class="nav-link px-2 text-light">Frameworks</a>
+              <nuxt-link to="/frameworks" class="nav-link px-2 text-light">Frameworks</nuxt-link>
             </li>
             <li>
-              <a href="/about" class="nav-link px-2 text-light">About</a>
+              <nuxt-link to="/about" class="nav-link px-2 text-light">About</nuxt-link>
             </li>
           </ul>
-
         </div>
       </div>
     </div>
@@ -43,9 +54,9 @@
 </template>
 <script>
 export default ({
-  data(){
+  data() {
     return {
-      dropdownShow:false
+      dropdownShow: false
     }
   }
 })
@@ -77,17 +88,15 @@ export default ({
   font-size: 85%;
 }
 
-
-
 .dropdown .after {
-  color:white;
-    display: inline-block;
-    margin-left: .255em;
-    vertical-align: .255em;
-    border-top: .3em solid;
-    border-right: .3em solid transparent;
-    border-bottom: 0;
-    border-left: .3em solid transparent;
+  color: white;
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
 }
 
 @media (min-width: 768px) {

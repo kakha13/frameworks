@@ -18,10 +18,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-.f-logo {
-    height: 32px;
-    min-width: 32px;
-}
-</style>

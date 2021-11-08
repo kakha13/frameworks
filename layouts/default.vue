@@ -11,14 +11,28 @@
 .text-indigo {
   color:var(--bs-indigo)
 }
+
 .text-cyan {
   color:var(--bs-cyan)
+}
+
+.text-gray {
+  color:var(--bs-gray-800)
+}
+.text-gray-400 {
+  color:var(--bs-gray-400)
 }
 
 li:hover a {
   color:var(--bs-blue) !important
 }
-
+.bg-indigo {
+  background-color:var(--bs-indigo);
+}
+.f-logo {
+    height: 32px;
+    min-width: 32px;
+}
 .img-thumbnail {
     height: 80px !important;
     min-width: 80px !important;
@@ -26,16 +40,10 @@ li:hover a {
 }
 .card {
     border: 0 !important;
-    box-shadow: 0 1px 3px rgb(3 0 71 / 9%);    
-    word-wrap: break-word;
+    background-color: #fff;
     background-clip: border-box;
-    background-color:#fff;
-    border: 1px solid #ecebf1;
-    border-radius: .5rem;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    position: relative;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
 }
 .rating-number {
   box-shadow: 0 1px 3px rgb(3 0 71 / 9%);
@@ -46,5 +54,10 @@ li:hover a {
   width: 45px;
   text-align: center;
   background: #fff;
+}
+
+.search {
+  background-color: #f1f3fa!important;
+    border-color: #f1f3fa!important;
 }
 </style>
