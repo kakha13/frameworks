@@ -16,6 +16,7 @@
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.19.0",
     "nuxt-edge": "latest",
+    "vue-disqus": "^4.0.1",
     "vue-star-rating": "^1.7.0"
   },
   "devDependencies": {

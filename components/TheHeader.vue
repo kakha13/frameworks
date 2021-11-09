@@ -27,6 +27,9 @@
                 <nuxt-link to="/frameworks" class="dropdown-item">Frameworks</nuxt-link>
               </li>
               <li>
+                <nuxt-link to="/blogs" class="dropdown-item">Blogs</nuxt-link>
+              </li>
+              <li>
                 <nuxt-link to="/about" class="dropdown-item">About</nuxt-link>
               </li>
             </ul>

@@ -1,11 +1,7 @@
 <template>
   <div class="container">
-    <div v-if="framework.image" class="frameworks position-relative">
-      <Rating :framework="framework"/>
-      <Logo
-        :src="require(`~/assets/logos/${framework.image}`)"
-        :title="framework.title"
-      />
+    <div v-if="framework.image" class="frameworks">
+      <FrameworkHeader :framework="framework"/>
       <nuxt-content :document="framework"  />
     </div>
     <div v-else>
@@ -17,6 +13,9 @@
       <div class="bd-content order-1 py-5">
         <Framework :frameworks="frameworks" />
       </div>
+    </div>
+    <div class="comments mt-5">
+        <Disqus />
     </div>
   </div>
 </template>

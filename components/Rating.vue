@@ -1,7 +1,5 @@
 <template>
-    <div class="position-absolute top-0 end-0">
-        <star-rating v-model="rating" @rating-selected ="setRating" text-class="rating-number" :round-start-rating="false" :rounded-corners="true" :padding="1" :star-size="30"></star-rating>
-    </div>
+    <star-rating v-model="rating" @rating-selected ="setRating" text-class="rating-number" :round-start-rating="false" :rounded-corners="true" :padding="1" :star-size="30"></star-rating>
 </template>
 
 <script>

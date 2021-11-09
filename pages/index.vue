@@ -132,10 +132,9 @@
                                     alt="Vue"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <a
-                                    href="/frameworks/javascript/vue"
+                                <NuxtLink to="/frameworks/javascript/vue"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Vue</a>
+                                >Vue</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -147,10 +146,9 @@
                                     alt="Angular"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <a
-                                    href="/frameworks/Angular"
+                                <NuxtLink to="/frameworks/javascript/angular"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Angular</a>
+                                >Angular</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -162,10 +160,9 @@
                                     alt="Bootstrap"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <a
-                                    href="/frameworks/Bootstrap"
+                                <NuxtLink to="/frameworks/css/bootstrap"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Bootstrap</a>
+                                >Bootstrap</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -175,60 +172,46 @@
 
         <section class="container mb-5">
             <div class="bd-content text-secondary">
-                <h2 class="pb-3 text-gray border-bottom">Blogs</h2>
-                <div class="row py-3">
-                    <div class="col-12 mb-3">
-                        <a
-                            href="#"
-                            class="fs-4 text-dark text-decoration-none"
-                        >Lorem, ipsum dolor, sit amet</a>
-                        <p>
-                            posted on
-                            <time datetime="2021-07-07">July 7, 2021</time> by
-                            <span class="text-primary">KAKHA13</span>
-                        </p>
-                        <a href="#" class="text-decoration-none">Read more →</a>
-                    </div>
-
-                    <div class="col-12 mb-3">
-                        <a
-                            href="#"
-                            class="fs-4 text-dark text-decoration-none"
-                        >Ad at nobis quae illum exercitationem minus!</a>
-                        <p>
-                            posted on
-                            <time datetime="2021-07-07">July 7, 2021</time> by
-                            <span class="text-primary">KAKHA13</span>
-                        </p>
-                        <a href="#" class="text-decoration-none">Read more →</a>
-                    </div>
-                </div>
+                <h2 class="pb-3 text-gray">Blogs</h2>
+                <Blogs :blogs="blogs" />
             </div>
         </section>
 
         <section class="container">
             <div class="bd-content">
                 <h2 class="pb-3 text-gray">Our Partners</h2>
-                <div class="row gx-3 py-3">
+                <div class="row gx-3">
                     <ul>
                         <li class="list-unstyled">
                             <a
                                 href="https://any.ge"
-                                class="fs-3 text-decoration-none"
+                                class="fs-5 text-decoration-none"
                                 target="_blank"
                             >any.ge online services</a>
                         </li>
-                        <li class="list-unstyled text-muted fs-3">more (coming soon!)</li>
+                        <li class="list-unstyled text-muted fs-5">more (coming soon!)</li>
                     </ul>
                 </div>
             </div>
         </section>
-        <footer class="container py-5 text-muted border-top">Created by KAKHA13 · © 2021</footer>
+        <footer class="container py-5 text-muted ">Created by KAKHA13 · © 2021</footer>
     </main>
 </template>
 
 <script>
 export default {
+    async asyncData ({ $content, params }) {
+
+    const blogs = await $content('blogs',{ deep: true }, params.slug)
+      .only(['title', 'description','author', 'slug','createdAt'])
+      .sortBy('date','desc')
+      .limit(5)
+      .fetch()
+
+    return {
+      blogs
+    }
+  },
     head() {
         return {
             title: "Main Page",

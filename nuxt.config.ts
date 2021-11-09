@@ -19,7 +19,8 @@ export default defineNuxtConfig({
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/star-rating.js', mode: 'client'}
+    { src: '~/plugins/star-rating.js', mode: 'client'},
+    '~/plugins/disqus'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
