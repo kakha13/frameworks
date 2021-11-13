@@ -7,8 +7,11 @@
         <div
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
-          <div class="dropdown">
-            <a href="#"
+          <NuxtLink to="/" class="d-none d-lg-block align-items-center text-decoration-none px-2">
+              <h4 class="m-auto text-white fw-bold">FC</h4>
+          </NuxtLink>
+          <div class="d-lg-none dropdown">
+            <a 
               @click="dropdownShow = !dropdownShow"
               class="d-flex align-items-center col-lg-4 mb-lg-0 link-dark text-decoration-none"
             >
@@ -45,6 +48,9 @@
             </li>
             <li>
               <nuxt-link to="/frameworks" class="nav-link px-2 text-light">Frameworks</nuxt-link>
+            </li>
+            <li>
+              <nuxt-link to="/blogs" class="nav-link px-2 text-light">Blogs</nuxt-link>
             </li>
             <li>
               <nuxt-link to="/about" class="nav-link px-2 text-light">About</nuxt-link>

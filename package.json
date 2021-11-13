@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27264486.37f86a0",
+    "@nuxt/image": "^0.6.0",
     "bootstrap": "^5.1.3"
   }
 }

@@ -9,7 +9,7 @@
       
       <div class="d-inline-flex align-self-start flex-row card-body">
         <Logo
-          :image="require(`~/assets/logos/${item.image}`)"
+          :image="item.image"
           title="css"
           class="flex-shrink-0"
         />

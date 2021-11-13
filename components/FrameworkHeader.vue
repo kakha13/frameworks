@@ -12,7 +12,7 @@
         "
       >
         <Logo
-          :image="require(`~/assets/logos/${framework.image.toLowerCase()}`)"
+          :image="framework.image.toLowerCase()"
           :title="framework.title"
           class="flex-shrink-0 img-fluid img-thumbnail"
         />

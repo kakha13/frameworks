@@ -14,9 +14,10 @@
         <div class="row gx-3">
               <div v-for="cat in categories" :key="cat.slug" class="col-sm-6 col-md-4 mb-3" >
                 <div class="card p-3">
-                  <div class="d-inline-flex align-self-center flex-row">
+                  
+                  <div class="d-inline-flex align-self-start flex-row">
                     <Logo
-                      :src="require(`~/assets/logos/${cat[0].language.toLowerCase()}.svg`)"
+                      :image="`${cat[0].language.toLowerCase()}.svg`"
                       :title="cat[0].language"
                       class="flex-shrink-0"
                     />
@@ -38,7 +39,6 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-
     function groupBy(arr, criteria) {
         const newObj = arr.reduce(function (acc, currentValue) {
             if (!acc[currentValue[criteria]]) {
@@ -56,7 +56,6 @@ export default {
     
     const categories = groupBy(frameworks, "language")
     
-
     return {
       frameworks,categories
     }

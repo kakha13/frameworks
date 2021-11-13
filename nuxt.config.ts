@@ -30,6 +30,7 @@ export default defineNuxtConfig({
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     // "@nuxtjs/eslint-module",
+    '@nuxt/image',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,6 +41,7 @@ export default defineNuxtConfig({
     "@nuxtjs/pwa",
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
+    "@nuxt/image",
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -54,7 +56,10 @@ export default defineNuxtConfig({
   
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
-  content: { fullTextSearchFields: ["title", "description"] },
+  content: { 
+    fullTextSearchFields: ["title", "description"],
+    apiPrefix: 'api'
+   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile:['vue-star-rating']

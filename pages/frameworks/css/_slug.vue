@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-    <div v-if="framework.image" class="frameworks">
+    <div v-if="framework.title" class="frameworks">
       <FrameworkHeader :framework="framework" />
       <nuxt-content :document="framework" />
+       <div class="comments mt-5">
+        <Disqus />
+      </div>
     </div>
     <div v-else>
       <Category
@@ -11,17 +14,13 @@
       ></Category>
 
       <div class="bd-content order-1 py-5">
-        <div class="bd-content order-1 py-5">
           <Framework :frameworks="frameworks" />
-        </div>
       </div>
     </div>
-    <div class="comments mt-5">
-      <Disqus />
-    </div>
   </div>
+  
+ <!-- 14 frameworks https://geekflare.com/best-css-frameworks/ -->
 </template>
-
 <script>
 export default {
   components: {},

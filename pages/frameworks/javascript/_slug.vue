@@ -1,8 +1,11 @@
 <template>
   <div class="container">
-    <div v-if="framework.image" class="frameworks">
+    <div v-if="framework.title" class="frameworks">
       <FrameworkHeader :framework="framework"/>
       <nuxt-content :document="framework"  />
+      <div class="comments mt-5">
+          <Disqus />
+      </div>
     </div>
     <div v-else>
       <Category
@@ -14,9 +17,6 @@
         <Framework :frameworks="frameworks" />
       </div>
     </div>
-    <div class="comments mt-5">
-        <Disqus />
-    </div>
   </div>
 </template>
 
@@ -25,7 +25,6 @@ export default {
   async asyncData({ $content, params}) {
     const framework = await $content(
       "frameworks/javascript",
-      { deep: true },
       params.slug
     ).fetch();
     

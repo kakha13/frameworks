@@ -1,7 +1,7 @@
 <template>
   <div class="py-5 border-bottom">
         <div class="d-inline-flex align-self-center flex-row align-items-center">
-          <Logo :image="require(`~/assets/logos/${framework.toLowerCase()}.svg`)" :title="framework" class="flex-shrink-0 img-fluid img-thumbnail"/>
+          <Logo :image="`${framework.toLowerCase()}.svg`" :title="framework" class="flex-shrink-0 img-fluid img-thumbnail"/>
           <h2 class="text-primary flex-grow-1 ms-3" style="justify-content: center;">{{framework}}</h2>
         </div>
       

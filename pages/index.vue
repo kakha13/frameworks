@@ -1,23 +1,19 @@
 <template>
     <main>
         <div class="container">
-            <div class="bg-white p-5 my-5 rounded text-left">
+            <div class="bg-white p-5 my-2 my-lg-5 rounded text-left">
                 <div class="mx-auto">
                     <h1 class="text-dark">Welcome Frameworks Catalog</h1>
                     <p class="py-3 fs-4 col-md-8">
                         You can look for your type frameworks in any programming languages
                         and get latest information about best frameworks
                     </p>
-                    <a
-                        href="/frameworks"
+                    <NuxtLink
+                        to="/frameworks"
                         class="btn bg-indigo text-light btn-lg px-4"
-                    >Explore Frameworks</a>
-                </div>
-            </div>
-        </div>
-        <section class="bg-white py-4 shadow-sm mb-5">
-            <div class="container">
-                <div class="row align-items-center g-0">
+                    >Explore Frameworks</NuxtLink>
+
+                    <div class="row align-items-center g-0 mt-5">
                     <div class="col-xl-4 col-lg-4 col-md-6 mb-lg-0 mb-4">
                         <div class="d-flex align-items-center">
                             <span
@@ -66,46 +62,44 @@
                         </div>
                     </div>
                 </div>
+                </div>
             </div>
-        </section>
-
+        </div>
+       
         <section class="container mb-5">
             <div class="bd-content">
                 <h2 class="pb-3 text-gray border-bottom">
                     Popular Languages
-                    <a href="/frameworks" class="text-decoration-none fs-6">
-                        More
-                        →
-                    </a>
+                    <NuxtLink to="/frameworks" class="text-decoration-none fs-6">More  →</NuxtLink>
                 </h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-3">
-                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
-                                <img
-                                    src="~assets/logos/javascript.svg"
-                                    alt="Javascript"
-                                    class="f-logo flex-shrink-0"
-                                />
-                                <a
-                                    href="/frameworks/javascript"
+                                <Logo
+                                    image="javascript.svg"
+                                    title="Javascript"
+                                    class="flex-shrink-0"
+                                    />
+                                <NuxtLink
+                                    to="/frameworks/javascript"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >JAVASCRIPT</a>
+                                >JAVASCRIPT</NuxtLink>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
-                                <img
-                                    src="~assets/logos/css.svg"
+                                <Logo
+                                    image="css.svg"
                                     alt="css"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <a
-                                    href="/frameworks/css"
+                                <NuxtLink
+                                    to="/frameworks/css"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >CSS</a>
+                                >CSS</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -117,14 +111,14 @@
             <div class="bd-content">
                 <h2 class="py-3 text-gray border-bottom">
                     Popular Framworks
-                    <a href="/frameworks" class="text-decoration-none fs-6">
+                    <NuxtLink to="/frameworks" class="text-decoration-none fs-6">
                         More
                         →
-                    </a>
+                    </NuxtLink>
                 </h2>
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-3">
-                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
                                 <img
@@ -138,7 +132,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
                                 <img
@@ -152,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 mb-3">
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
                                 <img
@@ -194,7 +188,6 @@
                 </div>
             </div>
         </section>
-        <footer class="container py-5 text-muted ">Created by KAKHA13 · © 2021</footer>
     </main>
 </template>
 

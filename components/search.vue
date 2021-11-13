@@ -15,25 +15,48 @@
       </template>
 
       <template v-slot:body>
-        <div class="text-primary fw-normal pb-2" v-if="frameworks.length">Frameworks</div>
-        <ul v-if="frameworks.length" class="list-group">
-          <li
-            v-for="item of frameworks"
-            :key="item.slug"
-            class="list-group-item card mb-2"
-          >
-            <NuxtLink
-              :to="item.path"
-              class="fw-bold text-decoration-none"
-              @click.native="handleClick"
+        <div class="text-primary fw-normal pb-2" v-if="frameworks.length">
+          <h5 class="text-secondary">Frameworks</h5>
+          <ul v-if="frameworks.length" class="list-group">
+            <li
+              v-for="item of frameworks"
+              :key="item.slug"
+              class="list-group-item card mb-2"
             >
-              {{ item.title }}
-            </NuxtLink>
-            <p class="fst-italic lh-sm m-0">
-              <small>{{ item.category }} ({{ item.language }})</small>
-            </p>
-          </li>
-        </ul>
+              <NuxtLink
+                :to="item.path"
+                class="fw-bold text-decoration-none"
+                @click.native="handleClick"
+              >
+                {{ item.title }}
+              </NuxtLink>
+              <p class="fst-italic lh-sm m-0">
+                <small>{{ item.category }} ({{ item.language }})</small>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="text-primary fw-normal pb-2" v-if="blogs.length">
+          <h5 class="text-secondary">Blogs</h5>
+          <ul class="list-group">
+            <li
+              v-for="item of blogs"
+              :key="item.slug"
+              class="list-group-item card mb-2"
+            >
+              <NuxtLink
+                :to="`/blog/${item.slug}`"
+                class="fw-bold text-decoration-none"
+                @click.native="handleClick"
+              >
+                {{ item.title }}
+              </NuxtLink>
+              <p class="fst-italic lh-sm m-0">
+                <small>{{ item.category }} ({{ item.description }})</small>
+              </p>
+            </li>
+          </ul>
+        </div>
       </template>
 
       <template v-slot:footer></template>
@@ -46,6 +69,7 @@ export default {
     return {
       searchQuery: "",
       frameworks: [],
+      blogs: [],
       isModalVisible: false,
     };
   },
@@ -57,6 +81,11 @@ export default {
       }
       this.frameworks = await this.$content("frameworks", { deep: true })
         .limit(6)
+        .search(searchQuery)
+        .fetch();
+
+      this.blogs = await this.$content("blogs")
+        .limit(3)
         .search(searchQuery)
         .fetch();
     },
