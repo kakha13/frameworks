@@ -1,6 +1,6 @@
 <template>
   <main class="container">
-    <div class="pt-5 border-bottom">
+    <div class="bg-white p-5 my-2 my-lg-5 rounded text-left border-bottom">
       <h1 >Frameworks</h1>
       <p class="fs-5 col-md-8">
         Quickly and easily get started with Bootstrap's compiled,
@@ -30,7 +30,7 @@
     
     <div class="bd-content pt-5">
       <h2 class="pb-3">Frameworks</h2>
-      <Framework :frameworks="frameworks" />
+      <Framework :frameworks="frameworks" languages="1" />
     </div>
     <NuxtChild/>
   </main>

@@ -1,5 +1,6 @@
 <template>
-  <div class="my-3 my-lg-5 border-bottom">
+
+  <div class="bg-white p-5 my-2 my-lg-5 rounded text-left border-bottom">
     <div class="row">
       <div
         class="
@@ -17,7 +18,7 @@
           class="flex-shrink-0 img-fluid img-thumbnail"
         />
         <h2
-          class="text-primary flex-grow-1 ms-3"
+          class="flex-grow-1 ms-3"
           style="justify-content: center"
         >
           {{ framework.title }}

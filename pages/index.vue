@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="container">
-            <div class="bg-white p-5 my-2 my-lg-5 rounded text-left">
+            <div class="bg-white p-5 my-2 my-lg-5 rounded text-left border-bottom">
                 <div class="mx-auto">
                     <h1 class="text-dark">Welcome Frameworks Catalog</h1>
                     <p class="py-3 fs-4 col-md-8">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
-                        <div class="card p-3">
+                        <div class="card p-3 ">
                             <div class="d-inline-flex align-self-start flex-row">
                                 <Logo
                                     image="css.svg"
@@ -118,62 +118,33 @@
                 </h2>
 
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-3">
-                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
+                    <div v-for="item of popular" :key="item.name" class="col-sm-6 col-md-4 mb-0 mb-lg-3">
                         <div class="card p-3">
                             <div class="d-inline-flex align-self-start flex-row">
-                                <img
-                                    src="~assets/logos/vue.svg"
-                                    alt="Vue"
+                                <Logo
+                                    :image="`${item.name.toLowerCase()}.svg`"
+                                    :alt="item.name"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <NuxtLink to="/frameworks/javascript/vue"
+                                <NuxtLink :to="item.link"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Vue</NuxtLink>
+                                >{{item.name}}</NuxtLink>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
-                        <div class="card p-3">
-                            <div class="d-inline-flex align-self-start flex-row">
-                                <img
-                                    src="~assets/logos/angular.svg"
-                                    alt="Angular"
-                                    class="f-logo flex-shrink-0"
-                                />
-                                <NuxtLink to="/frameworks/javascript/angular"
-                                    class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Angular</NuxtLink>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
-                        <div class="card p-3">
-                            <div class="d-inline-flex align-self-start flex-row">
-                                <img
-                                    src="~assets/logos/bootstrap.svg"
-                                    alt="Bootstrap"
-                                    class="f-logo flex-shrink-0"
-                                />
-                                <NuxtLink to="/frameworks/css/bootstrap"
-                                    class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >Bootstrap</NuxtLink>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </section>
 
         <section class="container mb-5">
-            <div class="bd-content text-secondary">
-                <h2 class="pb-3 text-gray">Blogs</h2>
-                <Blogs :blogs="blogs" />
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="bd-content">
-                <h2 class="pb-3 text-gray">Our Partners</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <h2 class="pb-3 text-gray">Blogs</h2>
+                    <Blogs :blogs="blogs" />
+                </div>
+              <div class="col-md-4">
+                  <h2 class="pb-3 text-gray">Our Partners</h2>
                 <div class="row gx-3">
                     <ul>
                         <li class="list-unstyled">
@@ -183,9 +154,23 @@
                                 target="_blank"
                             >any.ge online services</a>
                         </li>
-                        <li class="list-unstyled text-muted fs-5">more (coming soon!)</li>
+                        <li class="list-unstyled">
+                            <a
+                                href="https://ergaleia.net/"
+                                class="fs-5 text-decoration-none"
+                                target="_blank"
+                            >Ergaleia.net Free Online Web Tools</a>
+                        </li>
+                        <li class="list-unstyled">
+                            <a
+                                href="https://neverhaveiever.online"
+                                class="fs-5 text-decoration-none"
+                                target="_blank"
+                            >Never Have I Ever Online - Questions & Game</a>
+                        </li>
                     </ul>
                 </div>
+              </div>
             </div>
         </section>
     </main>
@@ -194,6 +179,21 @@
 <script>
 export default {
     async asyncData ({ $content, params }) {
+    
+    const popular = [
+        {
+            name:"Vue",
+            link:"/frameworks/javascript/vue",
+        },
+        {
+            name:"Angular",
+            link:"/frameworks/javascript/Angular",
+        },
+        {
+            name:"Bootstrap",
+            link:"/frameworks/css/bootstrap",
+        },
+    ]
 
     const blogs = await $content('blogs',{ deep: true }, params.slug)
       .only(['title', 'description','author', 'slug','createdAt'])
@@ -202,7 +202,7 @@ export default {
       .fetch()
 
     return {
-      blogs
+      blogs,popular
     }
   },
     head() {

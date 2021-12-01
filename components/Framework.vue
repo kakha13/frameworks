@@ -16,12 +16,19 @@
 
         <NuxtLink
           :to="`${item.path}`"
-          class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
+          class="text-decoration-none h4 flex-grow-1 ms-3"
           >{{ item.title }}</NuxtLink
         >
+        
       </div>
       <div class="card-body pt-0">
       <p>{{ item.description }}</p>
+        <NuxtLink
+          v-if="languages"
+          :to="`${item.language}`"
+          class="badge bg-light text-dark text-decoration-none rounded-pill"
+          >{{ item.language.toUpperCase() }}</NuxtLink
+        >
       </div>
       </div>
     </article>
@@ -30,7 +37,7 @@
 
 <script>
 export default {
-    props: ['frameworks']
+    props: ['frameworks','languages']
 };
 </script>
 
