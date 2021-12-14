@@ -2,7 +2,7 @@
 title: Symfony 
 description: 'Symfony is a set of reusable PHP components and a PHP framework to build web applications, APIs, microservices and web services.'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: symfony.svg
 link: https://symfony.com/
 ---

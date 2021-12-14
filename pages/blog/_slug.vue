@@ -46,7 +46,8 @@
 <script>
 export default {
     async asyncData({ $content, params }) {
-        const article = await $content('blogs', params.slug).fetch()
+        const article = await $content('blogs', params.slug)
+        .fetch()
 
         const [prev, next] = await $content('blogs')
             .only(['title', 'slug'])
@@ -75,14 +76,14 @@ export default {
     },
     head() {
     return {
-      title: this.article.title + ' - Blog',
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: this.article.description,
-        },
-      ],
+        titleTemplate: this.article.title+' - %s',
+        meta: [
+            {
+            hid: "description",
+            name: "description",
+            content: this.article.description,
+            },
+        ],
     };
   }
 }

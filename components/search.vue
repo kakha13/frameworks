@@ -67,7 +67,7 @@
 export default {
   data() {
     return {
-      searchQuery: "",
+      searchQuery: null,
       frameworks: [],
       blogs: [],
       isModalVisible: false,

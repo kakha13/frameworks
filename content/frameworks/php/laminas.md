@@ -2,7 +2,7 @@
 title: Laminas  
 description: 'Components for any PHP application, including dependency injection, event dispatchers, input validation and filtering, pagination and navigation'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: laminas.svg
 link: https://getlaminas.org/
 ---

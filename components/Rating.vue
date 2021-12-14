@@ -28,7 +28,6 @@ export default {
                 path: this.framework.path,
                 rating
                 }});
-                console.log(response);
             } catch (error) {
                 console.error(error);
             }

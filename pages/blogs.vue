@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <div class="py-3 py-lg-5 border-bottom mb-3">
-      <h1>Blogs</h1>
+    <div class="bg-white p-5 my-2 my-lg-5 rounded text-left border-bottom">
+      <h1 >Blogs</h1>
       <p class="fs-5 col-md-8">
-        Read latest news about our website and frameworks
+         Read latest news about our website and frameworks
       </p>
     </div>
     <Blogs :blogs="blogs" />
@@ -22,6 +22,12 @@ export default {
       blogs,
     };
   },
+  head () {
+    return {
+      titleTemplate: 'Blogs - %s',
+      
+    }
+  }
 };
 </script>
 

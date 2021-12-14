@@ -2,7 +2,7 @@
 title: CakePHP  
 description: 'CakePHP is an open-source web, rapid development framework that makes building web applications simpler, faster and require less code.'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: cakephp.svg
 link: https://cakephp.org
 ---

@@ -2,7 +2,7 @@
 title: CodeIgniter
 description: 'The small framework with powerful features'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: codeigniter.svg
 link: https://codeigniter.com/
 ---

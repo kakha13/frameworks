@@ -15,7 +15,7 @@
         />
 
         <NuxtLink
-          :to="`${item.path}`"
+          :to="`${item.path ? item.path : '/'}`"
           class="text-decoration-none h4 flex-grow-1 ms-3"
           >{{ item.title }}</NuxtLink
         >
@@ -25,7 +25,7 @@
       <p>{{ item.description }}</p>
         <NuxtLink
           v-if="languages"
-          :to="`${item.language}`"
+          :to="`frameworks/${item.language ? item.language.toLowerCase() : ''}`"
           class="badge bg-light text-dark text-decoration-none rounded-pill"
           >{{ item.language.toUpperCase() }}</NuxtLink
         >

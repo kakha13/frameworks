@@ -24,7 +24,7 @@
                                 >change_history</i>
                             </span>
                             <div class="ms-3">
-                                <h4 class="mb-0 fw-semi-bold">30 Languages</h4>
+                                <h4 class="mb-0 fw-semi-bold">3 Languages</h4>
                                 <p class="mb-0">Find frameworks from many programming languages</p>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                                 >category</i>
                             </span>
                             <div class="ms-3">
-                                <h4 class="mb-0 fw-semi-bold">4000 Frameworks</h4>
+                                <h4 class="mb-0 fw-semi-bold">Frameworks</h4>
                                 <p class="mb-0">Find the right framework for you</p>
                             </div>
                         </div>
@@ -100,6 +100,21 @@
                                     to="/frameworks/css"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
                                 >CSS</NuxtLink>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
+                        <div class="card p-3 ">
+                            <div class="d-inline-flex align-self-start flex-row">
+                                <Logo
+                                    image="php.svg"
+                                    alt="php"
+                                    class="f-logo flex-shrink-0"
+                                />
+                                <NuxtLink
+                                    to="/frameworks/php"
+                                    class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
+                                >PHP</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -187,7 +202,7 @@ export default {
         },
         {
             name:"Angular",
-            link:"/frameworks/javascript/Angular",
+            link:"/frameworks/javascript/angular",
         },
         {
             name:"Bootstrap",
@@ -207,7 +222,7 @@ export default {
   },
     head() {
         return {
-            title: "Main Page",
+            titleTemplate: '%s - Main Page',
         };
     },
 };

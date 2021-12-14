@@ -42,11 +42,7 @@ export default {
   
   head() {
     return {
-      title: `Framework/${
-        this.framework.title
-          ? this.framework.language + "/" + this.framework.title
-          : this.frameworks[0].language
-      }`,
+      titleTemplate: this.framework.title ?  + this.framework.title+' - %s' : this.frameworks[0].language+' - %s',
       meta: [
         {
           hid: "description",

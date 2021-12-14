@@ -11,16 +11,16 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.15.0",
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/pwa": "^3.3.5",
-    "core-js": "^3.19.0",
+    "core-js": "^3.19.3",
     "nuxt-edge": "latest",
     "vue-disqus": "^4.0.1",
     "vue-star-rating": "^1.7.0"
   },
   "devDependencies": {
-    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27264486.37f86a0",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27319101.3e82f0f",
     "@nuxt/image": "^0.6.0",
     "bootstrap": "^5.1.3"
   }

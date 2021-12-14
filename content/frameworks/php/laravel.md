@@ -2,7 +2,7 @@
 title: Laravel
 description: 'The PHP Framework for Web Artisans'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: laravel.svg
 link: https://laravel.com/
 ---

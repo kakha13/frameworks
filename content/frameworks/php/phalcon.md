@@ -2,7 +2,7 @@
 title: Phalcon  
 description: 'Its innovative architecture makes Phalcon the fastest PHP framework ever built!'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: phalcon.svg
 link: https://phalcon.io
 ---

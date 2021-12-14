@@ -23,29 +23,26 @@
 </template>
 <script>
 export default {
-  components: {},
-  async asyncData({ $content, params }) {
+  async asyncData({ $content, params}) {
     const framework = await $content(
       "frameworks/css",
-      { deep: true },
       params.slug
     ).fetch();
+    
     const frameworks = await $content(
       "frameworks/css",
       { deep: true },
       params.slug
     )
-      .only(["title", "image", "language", "description", "slug"])
-      .fetch();
+    .only(["title", "image", "language", "description", "slug"])
+    .fetch();
+
     return { framework, frameworks };
   },
   head() {
     return {
-      title: `Framework/${
-        this.framework.title
-          ? this.framework.language + "/" + this.framework.title
-          : this.frameworks[0].language
-      }`,
+    
+      titleTemplate: this.framework.title ? this.framework.title+' - %s' : this.frameworks[0].language+' - %s',
       meta: [
         {
           hid: "description",

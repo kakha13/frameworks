@@ -2,7 +2,7 @@
 title: Yii  
 description: 'Yii is a fast, secure, and efficient PHP framework. Flexible yet pragmatic. Works right out of the box. Has reasonable defaults.'
 category: 'Framework'
-language: 'Php'
+language: 'php'
 image: yii.svg
 link: https://www.yiiframework.com/
 ---
