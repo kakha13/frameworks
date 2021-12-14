@@ -8,8 +8,7 @@
                         You can look for your type frameworks in any programming languages
                         and get latest information about best frameworks
                     </p>
-                    <NuxtLink
-                        to="/frameworks"
+                    <NuxtLink to="/frameworks"
                         class="btn bg-indigo text-light btn-lg px-4"
                     >Explore Frameworks</NuxtLink>
 
@@ -81,8 +80,7 @@
                                     title="Javascript"
                                     class="flex-shrink-0"
                                     />
-                                <NuxtLink
-                                    to="/frameworks/javascript"
+                                <NuxtLink to="/frameworks/javascript/"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
                                 >JAVASCRIPT</NuxtLink>
                             </div>
@@ -96,8 +94,7 @@
                                     alt="css"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <NuxtLink
-                                    to="/frameworks/css"
+                                <NuxtLink to="/frameworks/css/"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
                                 >CSS</NuxtLink>
                             </div>
@@ -111,8 +108,7 @@
                                     alt="php"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <NuxtLink
-                                    to="/frameworks/php"
+                                <NuxtLink to="/frameworks/php/"
                                     class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
                                 >PHP</NuxtLink>
                             </div>
@@ -126,7 +122,7 @@
             <div class="bd-content">
                 <h2 class="py-3 text-gray border-bottom">
                     Popular Framworks
-                    <NuxtLink to="/frameworks" class="text-decoration-none fs-6">
+                    <NuxtLink to="/frameworks/" class="text-decoration-none fs-6">
                         More
                         →
                     </NuxtLink>
@@ -141,9 +137,7 @@
                                     :alt="item.name"
                                     class="f-logo flex-shrink-0"
                                 />
-                                <NuxtLink :to="item.link"
-                                    class="text-primary text-decoration-none h4 flex-grow-1 ms-3"
-                                >{{item.name}}</NuxtLink>
+                                <NuxtLink :to="item.link" class="text-primary text-decoration-none h4 flex-grow-1 ms-3">{{item.name}}</NuxtLink>
                             </div>
                         </div>
                     </div>
@@ -198,15 +192,15 @@ export default {
     const popular = [
         {
             name:"Vue",
-            link:"/frameworks/javascript/vue",
+            link:"/frameworks/javascript/vue/",
         },
         {
             name:"Angular",
-            link:"/frameworks/javascript/angular",
+            link:"/frameworks/javascript/angular/",
         },
         {
             name:"Bootstrap",
-            link:"/frameworks/css/bootstrap",
+            link:"/frameworks/css/bootstrap/",
         },
     ]
 

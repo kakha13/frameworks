@@ -11,32 +11,24 @@
                 <nuxt-content :document="article" />
             </article>
             <div class="d-flex justify-content-center">
-                <NuxtLink
-                v-if="prev"
-                :to="{ name: 'blog-slug', params: { slug: prev.slug } }"
-                class="fw-bold text-primary text-decoration-none"
-                >
+                <NuxtLink v-if="prev" :to="{ name: 'blog-slug', params: { slug: prev.slug } }" class="fw-bold text-primary text-decoration-none">
                 ← {{ prev.title }}
                 </NuxtLink>
                 <span v-else>&nbsp;</span>
-                <NuxtLink
-                v-if="next"
-                :to="{ name: 'blog-slug', params: { slug: next.slug } }"
-                class="fw-bold text-primary text-decoration-none"
-                >
+                <NuxtLink v-if="next" :to="{ name: 'blog-slug', params: { slug: next.slug } }" class="fw-bold text-primary text-decoration-none">
                 {{ next.title }} →
                 </NuxtLink>
                 <span v-else>&nbsp;</span>
             </div>
             <div class="comments mt-5">
-                <Disqus />
+                <!-- <Disqus /> -->
             </div>
         </div>
         <div class="col-12 col-lg-3">
             <h5 class="text-secondary py-2">Blog</h5>
             <ul class="list-group">
                 <li class="list-group-item" v-for="item of blogs" :key="item.title">
-                    <nuxt-link :to="`/blog/${item.slug}`" class="text-decoration-none text-dark">{{item.title}}</nuxt-link>
+                    <NuxtLink :to="`/blog/${item.slug}/`" class="text-decoration-none text-dark">{{item.title}}</NuxtLink>
                 </li>
             </ul>
         </div>

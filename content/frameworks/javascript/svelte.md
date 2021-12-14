@@ -2,7 +2,7 @@
 title: Svelte
 description: 'Svelte is a radical new approach to building user interfaces'
 category: 'Framework'
-language: 'Javascript'
+language: 'javascript'
 image: svelte.svg
 link: https://svelte.dev/
 ---

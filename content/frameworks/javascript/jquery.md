@@ -2,7 +2,7 @@
 title: jQuery
 description: 'jQuery is a fast, small, and feature-rich JavaScript library.'
 category: 'Framework'
-language: 'Javascript'
+language: 'javascript'
 image: jquery.svg
 link: https://jquery.com/
 ---

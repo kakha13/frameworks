@@ -2,7 +2,7 @@
 title: Hydrogen
 description: Hydrogen's React-based framework for building custom storefronts on Shopify
 category: 'Framework'
-language: 'Javascript'
+language: 'javascript'
 image: hydrogen.svg
 link: https://hydrogen.shopify.dev/
 ---

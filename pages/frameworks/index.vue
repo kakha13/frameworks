@@ -17,11 +17,11 @@
                   
                   <div class="d-inline-flex align-self-start flex-row">
                     <Logo
-                      :image="`${cat[0].language.toLowerCase()}.svg`"
-                      :title="cat[0].language"
+                      :image="`${cat}.svg`"
+                      :title="cat"
                       class="flex-shrink-0"
                     />
-                    <NuxtLink :to="`/frameworks/${cat[0].language ? cat[0].language.toLowerCase() : ''}`" class="text-primary text-decoration-none h4 flex-grow-1 ms-3">{{cat[0].language.toUpperCase()}}</NuxtLink>
+                    <NuxtLink :to="`/frameworks/${cat}/`" class="text-primary text-decoration-none h4 flex-grow-1 ms-3">{{cat.toUpperCase()}}</NuxtLink>
                 </div>
                 </div>
             </div>
@@ -38,23 +38,25 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    function groupBy(arr, criteria) {
-        const newObj = arr.reduce(function (acc, currentValue) {
-            if (!acc[currentValue[criteria]]) {
-            acc[currentValue[criteria]] = [];
-            }
-            if(currentValue) acc[currentValue[criteria]].push(currentValue);
-            return acc;
-        }, {});
-        return newObj;
-    }
+    // function groupBy(arr, criteria) {
+    //     const newObj = arr.reduce(function (acc, currentValue) {
+    //         if (!acc[currentValue[criteria]]) {
+    //         acc[currentValue[criteria]] = [];
+    //         }
+    //         if(currentValue) acc[currentValue[criteria]].push(criteria);
+    //         return acc;
+    //     }, {});
+    //     return newObj;
+    // }
 
     const frameworks = await $content('frameworks',{ deep: true }, params.slug)
       .only(['title', 'description','image','path', 'slug','language'])
       .fetch()
-    console.log("FW",frameworks);
-    const categories = groupBy(frameworks, "language")
-    
+      
+    // const categories = groupBy(frameworks, "language")
+    const categories = [
+      'javascript','css','php'
+    ]
     return {
       frameworks,categories
     }

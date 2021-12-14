@@ -43,7 +43,9 @@ export default defineNuxtConfig({
     // https://go.nuxtjs.dev/content
     "@nuxt/content",
     "@nuxt/image",
+    "@nuxtjs/sitemap",
   ],
+
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
@@ -56,6 +58,36 @@ export default defineNuxtConfig({
   },
   
 
+  sitemap: {
+      hostname: "https://frameworkscatalog.com",
+      gzip: false,
+      filter({ routes }) {
+          return routes.map(route => {
+              route.url = `${route.url}/`;
+              return route;
+          });
+      },
+      defaults: {
+          changefreq: "daily",
+          priority: 1,
+          lastmod: new Date()
+      },
+      async routes () {
+        const { $content } = require('@nuxt/content')
+        const files = await $content('frameworks',{ deep: true }).only(['path']).fetch()
+        const all = [
+            "/play/normal",
+            "/play/popular",
+            "/play/sexy-and-dirty",
+            "/play/party",
+            "/play/for-couple",
+            "/play/teens"
+        ]
+        return []
+        .concat(...files.map(file => '/'+file.path))
+        // .concat(...all)
+      },
+  },
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: { 
     fullTextSearchFields: ["title", "description"],

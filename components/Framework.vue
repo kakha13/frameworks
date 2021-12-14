@@ -14,8 +14,7 @@
           class="flex-shrink-0"
         />
 
-        <NuxtLink
-          :to="`${item.path ? item.path : '/'}`"
+        <NuxtLink :to="`${item.path}/`"
           class="text-decoration-none h4 flex-grow-1 ms-3"
           >{{ item.title }}</NuxtLink
         >
@@ -23,9 +22,7 @@
       </div>
       <div class="card-body pt-0">
       <p>{{ item.description }}</p>
-        <NuxtLink
-          v-if="languages"
-          :to="`frameworks/${item.language ? item.language.toLowerCase() : ''}`"
+        <NuxtLink v-if="languages" :to="`/frameworks/${item.language ? item.language.toLowerCase() : ''}/`"
           class="badge bg-light text-dark text-decoration-none rounded-pill"
           >{{ item.language.toUpperCase() }}</NuxtLink
         >

@@ -23,8 +23,7 @@
               :key="item.slug"
               class="list-group-item card mb-2"
             >
-              <NuxtLink
-                :to="item.path"
+              <NuxtLink :to="`${item.path}/`"
                 class="fw-bold text-decoration-none"
                 @click.native="handleClick"
               >
@@ -44,8 +43,7 @@
               :key="item.slug"
               class="list-group-item card mb-2"
             >
-              <NuxtLink
-                :to="`/blog/${item.slug}`"
+              <NuxtLink :to="`/blog/${item.slug}/`"
                 class="fw-bold text-decoration-none"
                 @click.native="handleClick"
               >

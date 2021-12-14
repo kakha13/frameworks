@@ -4,7 +4,7 @@
       <FrameworkHeader :framework="framework" />
       <nuxt-content :document="framework" />
        <div class="comments mt-5">
-        <Disqus />
+        <!-- <Disqus /> -->
       </div>
     </div>
     <div v-else>
@@ -34,7 +34,7 @@ export default {
       { deep: true },
       params.slug
     )
-    .only(["title", "image", "language", "description", "slug"])
+    .only(["title", "image", "language","path", "description", "slug"])
     .fetch();
 
     return { framework, frameworks };

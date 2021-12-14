@@ -17,14 +17,14 @@ export default {
     },
     methods: {
         async fetchRating() {
-            const rating = await this.$axios.$get(`http://localhost/frameworkscatalog/?stars=${this.framework.path}`);
+            const rating = await this.$axios.$get(`https://frameworkscatalog.com/api.php?stars=${this.framework.path}`);
             this.rating = rating.rating
             this.count = rating.count
         },
 
         async setRating(rating){
             try {
-                const response = await this.$axios.$get('http://localhost/frameworkscatalog/?review=1',{ params :{
+                const response = await this.$axios.$get('https://frameworkscatalog.com/api.php?review=1',{ params :{
                 path: this.framework.path,
                 rating
                 }});

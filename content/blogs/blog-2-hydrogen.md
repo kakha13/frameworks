@@ -13,4 +13,4 @@ Github https://github.com/Shopify/hydrogen
 
 Hydrogen makes that possible by integrating React Server Components, streaming server-side rendering with suspense, and smart caching defaults. Paired with the globally distributed Storefront API, Shopify-optimized commerce components, and a Vite-powered developer environment, it’s the fast framework for developers and customers.
 
-learn more about <nuxt-link to="/frameworks/javascript/hydrogen">Hydrogen</nuxt-link>  <Logo image='hydrogen.svg' title="Hydrogen"></Logo> 
+learn more about <nuxt-link to="/frameworks/javascript/hydrogen/">Hydrogen</nuxt-link>  <Logo image='hydrogen.svg' title="Hydrogen"></Logo> 
