@@ -8,6 +8,7 @@ export default {
     data () {
         return {
         rating: 0,
+        reviews: [],
         count:0,
         }
     },
@@ -17,26 +18,34 @@ export default {
     },
     methods: {
         async fetchRating() {
+          
             const rating = await this.$axios.$get(`https://frameworkscatalog.com/api.php?stars=${this.framework.path}`);
             this.rating = rating.rating
+            this.reviews = rating.reviews
             this.count = rating.count
+            this.$store.commit('add', rating.reviews)
         },
 
         async setRating(rating){
-            try {
-                const response = await this.$axios.$get('https://frameworkscatalog.com/api.php?review=1',{ params :{
-                path: this.framework.path,
-                rating
-                }});
-            } catch (error) {
-                console.error(error);
-            }
+                let review = prompt("Review", "");
+
+                if (review != null) {
+
+                 try {
+                        const response = await this.$axios.$get('https://frameworkscatalog.com/api.php?review=1',{ params :{
+                        path: this.framework.path,
+                        rating,
+                        review_content:review
+                        }});
+                        alert(response.message)
+                    } catch (error) {
+                        console.error(error);
+                    }
+                    
+                }
+           
         },
     }
 
 }
 </script>
-
-<style>
-
-</style>

@@ -74,7 +74,7 @@ export default defineNuxtConfig({
       },
       async routes () {
         const { $content } = require('@nuxt/content')
-        const files = await $content('frameworks',{ deep: true }).only(['path']).fetch()
+        const files = await $content('frameworks',{ deep: true }).where({ slug: { $ne: 'README' } }).only(['path']).fetch()
         const all = [
             "/play/normal",
             "/play/popular",

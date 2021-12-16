@@ -38,18 +38,9 @@
 <script>
 export default {
   async asyncData ({ $content, params }) {
-    // function groupBy(arr, criteria) {
-    //     const newObj = arr.reduce(function (acc, currentValue) {
-    //         if (!acc[currentValue[criteria]]) {
-    //         acc[currentValue[criteria]] = [];
-    //         }
-    //         if(currentValue) acc[currentValue[criteria]].push(criteria);
-    //         return acc;
-    //     }, {});
-    //     return newObj;
-    // }
 
     const frameworks = await $content('frameworks',{ deep: true }, params.slug)
+      .where({ slug: { $ne: 'README' } })
       .only(['title', 'description','image','path', 'slug','language'])
       .fetch()
       

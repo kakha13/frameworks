@@ -4,7 +4,7 @@
       <FrameworkHeader :framework="framework" />
       <nuxt-content :document="framework" />
        <div class="comments mt-5">
-        <!-- <Disqus /> -->
+        <Reviews/>
       </div>
     </div>
     <div v-else>

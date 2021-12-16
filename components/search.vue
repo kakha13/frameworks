@@ -78,6 +78,7 @@ export default {
         return;
       }
       this.frameworks = await this.$content("frameworks", { deep: true })
+        .where({ slug: { $ne: 'README' } })
         .limit(6)
         .search(searchQuery)
         .fetch();

@@ -21,7 +21,7 @@
                 <span v-else>&nbsp;</span>
             </div>
             <div class="comments mt-5">
-                <!-- <Disqus /> -->
+                <Reviews/>
             </div>
         </div>
         <div class="col-12 col-lg-3">

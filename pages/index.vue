@@ -69,7 +69,7 @@
             <div class="bd-content">
                 <h2 class="pb-3 text-gray border-bottom">
                     Popular Languages
-                    <NuxtLink to="/frameworks" class="text-decoration-none fs-6">More  →</NuxtLink>
+                    <NuxtLink to="/frameworks/" class="text-decoration-none fs-6">More  →</NuxtLink>
                 </h2>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-3">
                     <div class="col-sm-6 col-md-4 mb-0 mb-lg-3">
@@ -199,13 +199,17 @@ export default {
             link:"/frameworks/javascript/angular/",
         },
         {
+            name:"Laravel",
+            link:"/frameworks/php/laravel/",
+        },
+        {
             name:"Bootstrap",
             link:"/frameworks/css/bootstrap/",
         },
     ]
 
     const blogs = await $content('blogs',{ deep: true }, params.slug)
-      .only(['title', 'description','author', 'slug','createdAt'])
+      .only(['title', 'description','author', 'slug','path','createdAt'])
       .sortBy('date','desc')
       .limit(5)
       .fetch()

@@ -4,7 +4,7 @@
       <FrameworkHeader :framework="framework"/>
       <nuxt-content :document="framework"  />
       <div class="comments mt-5">
-          <!-- <Disqus /> -->
+          <Reviews/>
       </div>
     </div>
     <div v-else>
@@ -23,6 +23,7 @@
 
 <script>
 export default {
+ 
   async asyncData({ $content, params}) {
     const framework = await $content(
       "frameworks/php",
