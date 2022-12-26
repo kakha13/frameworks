@@ -7,7 +7,7 @@ export default defineNuxtConfig({
    bridge: false,
    target: 'static',
    router: {
-    base: '/frameworks/site/'
+    base: '/frameworks/'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
